@@ -1,113 +1,9 @@
 
-const packages = {
-  mondstadt: {
-    nation: "Mondstadt",
-    eyebrow: "The Nation of Freedom",
-    title: "The City of Freedom Expedition",
-    description: "Experience the romantic charm of windmills, rolling green hills, and historic stone architecture. Perfect for travelers looking for a relaxing nature getaway.",
-    stops: ["Cider Lake", "Windrise", "Grand Cathedral of Mondstadt"],
-    price: 12500,
-    duration: "3 Days / 2 Nights",
-    image: "../static/images/mondstadt.webp",
-    homeHeroImage: "../static/images/homebg.png",
-    color: "#287d73",
-    itinerary: [
-      ["Arrival in the City of Freedom", "Private transfer, old-city orientation walk, Cathedral visit, and welcome dinner.", "../static/images/cath.webp"],
-      ["Windrise", "A guided countryside escape, lakeside picnic, and golden-hour windmill views.", "../static/images/wind.png"],
-      ["Leisurely farewell", "Local market morning and a relaxed departure transfer.", "../static/images/depart1.webp"]
-    ]
-  },
-  liyue: {
-    nation: "Liyue", 
-    eyebrow: "The Nation of Contracts", 
-    title: "The Harbor of Stone and Commerce",
-    description: "A bustling port city tour blending breathtaking mountain ranges, ancient folklore, and world-class culinary adventures.",
-    stops: ["Liyue Harbor", "Mt. Aocang", "Wangshu Inn"], 
-    price: 15000, duration: "4 Days / 3 Nights", 
-    image: "../static/images/liyue.jpg", color: "#a4681d",
-    directorImage: "../static/images/director.png",
-    itinerary: [
-      ["Harbor lights", "Arrival, waterfront promenade, and chef-led tasting dinner.", "../static/images/harbor.webp"], 
-      ["Above the clouds", "Full-day Mt. Aocang scenic excursion with a private guide.", "../static/images/mt.webp"], 
-      ["Ancient roads", "Folklore trail and sunset at Wangshu Inn.", "../static/images/wangshu.webp"], 
-      ["Market morning", "Souvenir stop and assisted departure.", "../static/images/depart2.webp"]]
-  },
-  inazuma: {
-    nation: "Inazuma", 
-    eyebrow: "The Nation of Eternity", 
-    title: "The Realm of Eternal Thunder",
-    description: "Discover a culturally rich archipelago featuring striking purple foliage, traditional shrines, and serene coastal views.",
-    stops: ["Narukami Island Grand Shrine", "Ritou Trading Port", "Tenshukaku"], 
-    price: 18000, duration: "4 Days / 3 Nights", 
-    image: "../static/images/inazuma.webp", color: "#7954a7",
-    itinerary: [
-      ["Across the narrows", "Arrival at Ritou and a lantern-lit welcome meal.", "../static/images/ritou.webp"], 
-      ["Sacred Narukami", "Shrine trail, garden tea, and coastal viewpoints.", "../static/images/narukami.png"], 
-      ["Seat of eternity", "Tenshukaku heritage tour and artisan workshop.", "../static/images/tenshukaku.webp"], 
-      ["Island farewell", "A relaxed breakfast and port transfer.", "../static/images/depart3.webp"]]
-  },
-  sumeru: {
-    nation: "Sumeru", 
-    eyebrow: "The Nation of Wisdom", 
-    title: "The City of Wisdom & Rainforest Retreat",
-    description: "A dual-environment journey taking you from the majestic halls of learning to the dense, mystical canopies of the rainforest.",
-    stops: ["Sumeru City Academy", "Gandharva Ville", "Caravan Ribat"], 
-    price: 14000, duration: "3 Days / 3 Nights", 
-    image: "../static/images/sumeru.webp", color: "#397a4c",
-    itinerary: [
-      ["City of scholars", "Academy district walk, bazaar lunch, and cultural briefing.", "../static/images/academy.webp"], 
-      ["Under the canopy", "Guided rainforest trek and evening in Gandharva Ville.", "../static/images/gandharva.png"], 
-      ["Desert threshold", "Caravan Ribat excursion and stargazing supper.", "../static/images/caravan.png"]]
-  },
-  fontaine: {
-    nation: "Fontaine", 
-    eyebrow: "The Nation of Justice", 
-    title: "The Capital of Justice, Steam, and Aquanics",
-    description: "Step into a picturesque hub of art, fashion, and advanced clockwork engineering surrounded by pristine waters.",
-    stops: ["Court of Fontaine", "Opera Epiclese", "Lucine Fountain"], 
-    price: 20000, duration: "5 Days / 4 Nights", 
-    image: "../static/images/fontaine.webp", color: "#3975a9",
-    itinerary: [
-      ["A grand entrance", "Aquabus arrival and boulevard orientation.", "../static/images/aquabus.webp"], 
-      ["Court & couture", "Architecture walk and fashion atelier visit.", "../static/images/court.jpg"], 
-      ["A day at the opera", "Opera Epiclese tour and evening performance.", "../static/images/opera.png"], 
-      ["Waters of Fontaine", "Lucine Fountain, and tasting menu.", "../static/images/waters.jpg"], 
-      ["Final promenade", "Leisure time and private departure.", "../static/images/depart5.jpg"]]
-  },
-  natlan: {
-    nation: "Natlan", 
-    eyebrow: "The Nation of War", 
-    title: "The Land of Ash, Hot Springs, and Valor",
-    description: "An energetic adventure featuring dramatic volcanic landscapes, therapeutic thermal springs, and vibrant tribal festivals.",
-    stops: ["Tepecac Stadium", "Children of the Echoes Canyon", "People of the Springs basin"], 
-    price: 16500, 
-    duration: "4 Days / 3 Nights", 
-    image: "../static/images/natlan.png", color: "#b84c31",
-    itinerary: [
-      ["Welcome to Natlan", "Arrival celebration and regional feast.", "../static/images/welcome.webp"], 
-      ["Echoes of the canyon", "Guided canyon route and craft village visit.", "../static/images/canyon.webp"], 
-      ["Fire & water", "Volcanic overlook, hot springs, and festival evening.", "../static/images/spring.jpg"], 
-      ["Champion's farewell", "Tepecac Stadium tour and departure.", "../static/images/stadium.webp"]]
-  },
-  snezhnaya: {
-    nation: "Snezhnaya", 
-    eyebrow: "The Nation of Love", 
-    title: "The Eternal White Tundra",
-    description: "A majestic winter expedition exploring frosted architectural marvels, grand palaces, and cozy alpine chalets under the aurora.",
-    stops: ["Zapolyarny Palace outskirts", "Frost-bound Valleys", "Glacial Outposts"], 
-    price: 22000, 
-    duration: "5 Days / 4 Nights", 
-    image: "../static/images/snezhnaya.webp", color: "#568295",
-    itinerary: [
-      ["Into the north", "Heated transfer, equipment fitting, and fireside dinner.", "../static/images/arrival.webp"], 
-      ["Palace horizons", "Architecture route around the Zapolyarny outskirts.", "../static/images/palace.avif"], 
-      ["Frost-bound valleys", "Guided snow trek and alpine chalet lunch.", "../static/images/valley.webp"], 
-      ["Under the aurora", "Glacial outpost excursion and northern-lights watch.", "../static/images/aurora.webp"], 
-      ["Warm farewell", "Slow breakfast and assisted departure.", "../static/images/farewell.jpg"]]
-  }
-};
+let packages = {};
+let packageList = [];
+let faqData = [];
+let siteSettings = {};
 
-const packageList = Object.entries(packages);
 const peso = new Intl.NumberFormat("en-PH", { style: "currency", currency: "PHP", maximumFractionDigits: 0 });
 
 const icons = {
@@ -166,9 +62,9 @@ function footer() {
       </div>
       <div>
         <strong>Direct line</strong>
-        <a href="tel:+639691234567">+63 969 123 4567</a>
-        <a href="mailto:celestiapassage@gmail.com">celestiapassage@gmail.com</a>
-        <span>Mon–Sat, 8:00 AM–6:00 PM</span>
+        <a href="tel:${(siteSettings.contact_phone || "").replace(/\s/g, "")}">${siteSettings.contact_phone || ""}</a>
+        <a href="mailto:${siteSettings.contact_email || ""}">${siteSettings.contact_email || ""}</a>
+        <span>${siteSettings.office_hours || ""}</span>
       </div>
     </div>
     <div class="footer-bottom">
@@ -217,28 +113,7 @@ function bookingModal(selected = "mondstadt") {
 }
 
 function faqSection() {
-  const faqs = [
-    [
-      "What is included in the base price?", 
-      "Your package includes accommodation, scheduled destination transfers, guided activities listed in the itinerary, and select meals. International transport and personal expenses are not included."
-    ],
-    [
-      "How do group prices work?", 
-      "The displayed rate is per person. Select your party size in the reservation form for an instant package estimate. Groups of six or more can request a tailored quotation."
-    ],
-    [
-      "Can I check a date before paying?", 
-      "Yes. Reservation requests are free and do not require payment. We confirm your preferred date first, then send a secure payment schedule."
-    ],
-    [
-      "Can an itinerary be customized?", 
-      "Absolutely. The listed itineraries are thoughtfully paced starting points. Tell us about dietary needs, accessibility requirements, or special interests in your follow-up consultation."
-    ],
-    [
-      "What is your cancellation policy?", 
-      "You may cancel without charge before accepting your final quotation. Confirmed trips follow the cancellation terms shown with your payment schedule."
-    ]
-  ];
+  const faqs = faqData.map(f => [f.question, f.answer]);
 
   return `<section class="faq section" id="faq">
     <div class="section-intro">
@@ -306,7 +181,7 @@ function journeysSection() {
 function promiseSection() {
   return `<section class="promise section" id="why-us">
     <div class="promise-image">
-      <img src="${packages.liyue.directorImage}" alt="Mountains and river in Liyue" loading="lazy">
+      <img src="${siteSettings.director_image || ""}" alt="Mountains and river in Liyue" loading="lazy">
       <span>Journeys paced<br>for memory.</span>
     </div>
     <div class="promise-copy">
@@ -366,7 +241,7 @@ function homePage() {
 }
 
 function nationPage(key) {
-  const p = packages[key] || packages.mondstadt;
+  const p = packages[key] || packageList[0][1];
   const others = packageList.filter(([k]) => k !== key).slice(0, 3);
   
   return `${header()}
@@ -512,7 +387,7 @@ function initializeInteractions() {
   const travelers = document.querySelector("#traveler-count");
   const total = document.querySelector("#booking-total");
   const updateTotal = () => {
-    const selected = packages[select?.value] || packages.mondstadt;
+    const selected = packages[select?.value] || packageList[0][1];
     const count = Math.max(1, Number(travelers?.value) || 1);
     if (total) total.textContent = peso.format(selected.price * count);
   };
@@ -536,13 +411,28 @@ function initializeInteractions() {
 
   const dateInput = document.querySelector('input[type="date"]');
   if (dateInput) dateInput.min = new Date(Date.now() + 86400000).toISOString().split("T")[0];
-  document.querySelector("#booking-form")?.addEventListener("submit", e => {
+  document.querySelector("#booking-form")?.addEventListener("submit", async e => {
     e.preventDefault();
-    const data = Object.fromEntries(new FormData(e.currentTarget));
-    localStorage.setItem("celestia-latest-request", JSON.stringify({ ...data, submittedAt: new Date().toISOString() }));
-    e.currentTarget.hidden = true;
-    document.querySelector(".dialog-heading").hidden = true;
-    document.querySelector(".success-state").hidden = false;
+    const form = e.currentTarget;
+    const button = form.querySelector('button[type="submit"]');
+    const data = Object.fromEntries(new FormData(form));
+    let box = form.querySelector(".form-error");
+    if (!box) { box = document.createElement("p"); box.className = "form-error"; box.setAttribute("role", "alert"); form.insertBefore(box, button); }
+    box.textContent = "";
+    button.disabled = true;
+    try {
+      const res = await fetch("../api/book.php", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(data) });
+      const out = await res.json();
+      if (!res.ok) { box.textContent = (out.errors || ["Could not send your request."]).join(" "); return; }
+      document.querySelector(".success-state p").textContent = `Thank you. Your reference is ${out.reference}. For choosing Celestia Passage, be assured that your journey is in capable hands.`;
+      form.hidden = true;
+      document.querySelector(".dialog-heading").hidden = true;
+      document.querySelector(".success-state").hidden = false;
+    } catch (err) {
+      box.textContent = "Could not reach the server. Please try again.";
+    } finally {
+      button.disabled = false;
+    }
   });
 
   const itineraryItems = document.querySelectorAll(".itinerary-details");
@@ -603,7 +493,23 @@ function initializeInteractions() {
   document.querySelectorAll(".journey-card, .section-intro, .section-heading, .timeline article, .stop-grid > div, .more-grid > a").forEach(el => { el.classList.add("reveal"); observer.observe(el); });
 }
 
-const page = document.body.dataset.page;
-const nation = document.body.dataset.nation;
-document.querySelector("#app").innerHTML = page === "nation" ? nationPage(nation) : homePage();
-initializeInteractions();
+async function start() {
+  const app = document.querySelector("#app");
+  try {
+    const res = await fetch("../api/data.php");
+    if (!res.ok) throw new Error("bad response");
+    const data = await res.json();
+    packages = data.packages;
+    packageList = Object.entries(packages);
+    faqData = data.faqs;
+    siteSettings = data.settings;
+  } catch (err) {
+    app.innerHTML = '<p style="padding:4rem 1rem;text-align:center">We could not load our journeys right now. Please try again shortly.</p>';
+    return;
+  }
+  const page = document.body.dataset.page;
+  const nation = document.body.dataset.nation;
+  app.innerHTML = page === "nation" ? nationPage(nation) : homePage();
+  initializeInteractions();
+}
+start();

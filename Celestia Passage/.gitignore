@@ -1,0 +1,16 @@
+# Local database password
+**/config/database.php
+
+# Secrets
+.env
+*.env
+
+# Computer and editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Logs and backups
+*.log
+*.bak
